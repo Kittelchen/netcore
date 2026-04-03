@@ -1,3 +1,4 @@
+using Common.Extensions;
 using Common.Interfaces;
 
 namespace Common.Services;
@@ -9,5 +10,5 @@ public class PlatformService : IPlatformService
     
     public string GetOS() => Environment.OSVersion.Platform.ToString();
     public bool IsWindows() => false;  // main focus not on Windows right now
-    public bool IsLinux() => GetOS().Equals(Unix, StringComparison.InvariantCultureIgnoreCase);
+    public bool IsLinux() => GetOS().IsEQ();
 }
