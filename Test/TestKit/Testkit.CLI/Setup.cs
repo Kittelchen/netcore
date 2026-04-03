@@ -9,6 +9,7 @@ public static class Setup
     public static IServiceCollection AddServices(IServiceCollection services)
     {
         services.AddSingleton<ITestService, TestService>();
+        services.AddSingleton<IPlatformService, PlatformService>();
         // ------------------------------------------------------
         // -- SEPERATOR------------------------------------------
         // ------------------------------------------------------
