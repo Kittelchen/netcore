@@ -10,6 +10,7 @@ public static class Setup
     {
         services.AddSingleton<ITestService, TestService>();
         services.AddSingleton<IPlatformService, PlatformService>();
+        services.AddSingleton<IShellService, ShellService>();
         // ------------------------------------------------------
         // -- SEPERATOR------------------------------------------
         // ------------------------------------------------------
