@@ -1,6 +1,24 @@
-﻿namespace Testkit.UI.ViewModels;
+﻿using Avalonia.Platform;
+using Common.Interfaces;
+
+namespace Testkit.UI.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    public string Greeting { get; } = "Welcome to Avalonia!";
+    private readonly IPlatformService _platformService;
+    private readonly IShellService _shellService;
+
+    public MainWindowViewModel(IPlatformService platformService, IShellService shellService)
+    {
+        _platformService = platformService;
+        _shellService = shellService;
+        SetGreetingMessage();
+    }
+        
+    public string Greeting { get; set;  } = $"Welcome to Avalonia!";
+
+    private void SetGreetingMessage()
+    {
+        Greeting =  $"Welcome to Avalonia! {_shellService.RunShell("uname -r")}";
+    }
 }

@@ -6,7 +6,9 @@ using System.Linq;
 using Avalonia.Markup.Xaml;
 using Testkit.UI.ViewModels;
 using Testkit.UI.Views;
+using Microsoft.Extensions.DependencyInjection;
 
+using Microsoft.Extensions.Hosting;
 namespace Testkit.UI;
 
 public partial class App : Application
@@ -18,14 +20,18 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        var host = Host.CreateDefaultBuilder()
+            .ConfigureServices(services => Setup.AddServices(services))
+            .Build();
+        
+        var mainWindowViewModel = host.Services.GetRequiredService<MainWindowViewModel>();
+        
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
-            // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainWindowViewModel(),
+                DataContext = mainWindowViewModel,
             };
         }
 
