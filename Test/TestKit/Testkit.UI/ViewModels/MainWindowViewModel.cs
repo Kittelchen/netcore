@@ -15,7 +15,7 @@ public partial class MainWindowViewModel : ViewModelBase
         SetGreetingMessage();
     }
         
-    public string Greeting { get; set;  } = $"Welcome to Avalonia!";
+    public string Greeting { get; private set;  } = $"Welcome to Avalonia!";
 
     private void SetGreetingMessage()
     {
