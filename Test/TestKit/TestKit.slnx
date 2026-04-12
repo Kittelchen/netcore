@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../../Common.Avalonia/Common.Avalonia.csproj" />
   <Project Path="../../Common/Common.csproj" />
   <Project Path="Testkit.CLI/Testkit.CLI.csproj" />
   <Project Path="Testkit.UI/Testkit.UI.csproj" />
