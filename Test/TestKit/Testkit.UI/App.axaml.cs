@@ -1,3 +1,4 @@
+using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
@@ -13,6 +14,7 @@ namespace Testkit.UI;
 
 public partial class App : Application
 {
+    public static IServiceProvider ServiceProvider { get; private set; }
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -24,7 +26,9 @@ public partial class App : Application
             .ConfigureServices(services => Setup.AddServices(services))
             .Build();
         
-        var mainWindowViewModel = host.Services.GetRequiredService<MainWindowViewModel>();
+        ServiceProvider = host.Services;
+        
+        var mainWindowViewModel = ServiceProvider.GetRequiredService<MainWindowViewModel>();
         
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Testkit.UI/App.axaml" value="Testkit.UI/Testkit.UI.csproj" />
+        <entry key="Testkit.UI/Assets/Icons.axaml" value="Testkit.UI/Testkit.UI.csproj" />
+        <entry key="Testkit.UI/Views/ButtonView.axaml" value="Testkit.UI/Testkit.UI.csproj" />
+        <entry key="Testkit.UI/Views/HomePageView.axaml" value="Testkit.UI/Testkit.UI.csproj" />
+        <entry key="Testkit.UI/Views/MainWindow.axaml" value="Testkit.UI/Testkit.UI.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

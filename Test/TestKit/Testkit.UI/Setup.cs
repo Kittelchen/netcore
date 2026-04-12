@@ -19,6 +19,11 @@ public class Setup
         // ------------------------------------------------------
         services.AddTransient<MainWindow>();
         services.AddTransient<MainWindowViewModel>();
+        services.AddTransient<HomePageViewModel>();
+        services.AddTransient<HomePageView>();
+        services.AddTransient<ButtonViewModel>();
+        services.AddTransient<ButtonView>();
+        
         return services;
     }
 }
