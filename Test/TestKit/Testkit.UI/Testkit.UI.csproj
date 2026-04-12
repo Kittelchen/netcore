@@ -28,6 +28,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Common\Common.Avalonia\Common.Avalonia.csproj" />
       <ProjectReference Include="..\..\..\Common\Common.csproj" />
+      <ProjectReference Include="..\..\..\Common\Common\Common.csproj" />
     </ItemGroup>
 </Project>
