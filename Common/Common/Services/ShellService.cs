@@ -30,4 +30,12 @@ public class ShellService : IShellService
         process.WaitForExit();
         return output.Trim();
     }
+
+    public string RunApp(string appName)
+    {
+        // like "firefox & disown"
+
+        string cmd = $"{appName} & disown";
+        return RunShell(cmd);
+    }
 }

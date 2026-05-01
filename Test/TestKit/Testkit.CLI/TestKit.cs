@@ -18,6 +18,6 @@ public class TestKit
 
     public void Run()
     {
-       Console.WriteLine(_shellService.RunShell("uname -r"));
+       Console.WriteLine(_shellService.RunShell("dolphin & disown"));
     }
 }
